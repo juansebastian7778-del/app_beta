@@ -3,29 +3,41 @@
     $LOCAL_HOST = "localhost"; //127.0.0.1
     $LOCAL_DBNAME = "app_beta";
     $LOCAL_USERNAME = "postgres";
-    $LOCAL_PASSWORD = "sebastian";
+    $LOCAL_PASSWORD = "unicesmag";
     $LOCAL_PORT = "5432";
 
   //Supabase Database configuration
-    $SUPA_HOST= "";
-    $SUPA_DBNAME = "";
-    $SUPA_USERNAME = "";
-    $SUPA_PASSWORD = "";
-    $SUPA_PORT = "";
+    $SUPA_HOST= "aws-0-us-west-2.pooler.supabase.com";
+    $SUPA_DBNAME = "postgres";
+    $SUPA_USERNAME = "postgres.hxttrontrstgqoxsgfvn";
+    $SUPA_PASSWORD = "unicesmag@@";
+    $SUPA_PORT = "6543";
 
-    $data_connection = "
+    $local_data_connection = "
     host=$LOCAL_HOST
     dbname=$LOCAL_DBNAME 
     user=$LOCAL_USERNAME
     password=$LOCAL_PASSWORD";
     
-    $conn = pg_connect($data_connection);
+    $local_conn = pg_connect($local_data_connection);
 
-    if (!$conn) {
-        echo "Error: Unable to connect to database , "; exit();
+    if (!$local_conn) {
+        echo "Error: Unable to connect to local database, "; exit();
     } else {
-        echo "Success connecting to the database.";
+        echo "Success connecting to the database.<br>";
     }
+   //supabase connection
+   $supa_data_connection = "
+    host=$SUPA_HOST
+    dbname=$SUPA_DBNAME 
+    user=$SUPA_USERNAME
+    password=$SUPA_PASSWORD";
     
-      
-?>
+    $supa_conn = pg_connect($supa_data_connection);
+
+    if (!$supa_conn) {
+        echo "Error: Unable to connect to Supabase database, "; exit();
+    } else {
+        echo "Supabase Success connecting to the database.";
+    }
+?>                                      
