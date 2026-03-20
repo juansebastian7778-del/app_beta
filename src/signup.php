@@ -1,0 +1,13 @@
+<?php
+// signup.php
+  include ('../config/database.php');
+    //get data
+    $f_name = $_POST['fname'];
+    $l_name = $_POST['lname'];
+    $e_mail = $_POST['email'];
+    $m_phone = $_POST['mphone'];
+    $p_ssword = $_POST['password'];
+    //query to insert into sql
+    $sql = "INSERT INTO users (first_name, last_name, mobilephone, email, password) VALUES ('$f_name', '$l_name', '$m_phone', '$e_mail', '$p_ssword')";
+    //execute query
+    pg_query($sql);
