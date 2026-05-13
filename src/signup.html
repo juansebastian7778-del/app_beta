@@ -6,8 +6,22 @@
     <title>Register User</title>
     <link rel="icon" type ="image/png" href="icons/home.png">
 </head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        padding-top: 80px;}
+    .container{
+       
+        border: 1px solid black;
+        padding: 20px;
+        
+    }
+</style>
 <body>
-    <table border="1" align="center">
+    <div class="container">
     <form name ="frm-user" action="signup.php" method="post">  
     <tr></td><label for="fname"> first name</label><tr></tr>
     <label for="fname">First name</label><br>
@@ -23,6 +37,6 @@
     <label for="mphone">Mobile phone</label><br>
     <input type="number" name="mphone"><br><br>
     <button>Register</button>
-    <table>
+    </div>
 </body>
 </html>

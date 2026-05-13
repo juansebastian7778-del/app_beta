@@ -13,3 +13,10 @@
     ('$f_name', '$l_name', '$m_phone', '$e_mail', '$enc_pass')";
     //execute query
     pg_query($sql);
+    if($res_local){
+    //echo "Listo. Usuario registrado";
+    echo"<script>alert('Listo. Usuario registrado')</script>";
+    } else {
+    echo"<script>alert('Error. Usuario no registrado')</script>";
+    }     
+    header('refresh:0;url = signin.html');
